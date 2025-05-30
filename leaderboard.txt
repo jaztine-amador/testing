@@ -1,0 +1,10 @@
+       Player       Puzzle/s Solved        Score
+        jazu               2                119        
+       kenji               1                 59        
+        jaz2               1                 57        
+         jj                0                 0         
+       allen               0                 0         
+         jj                0                 0         
+        jjj                0                 0         
+         e                 0                 0         
+         e                 0                 0         

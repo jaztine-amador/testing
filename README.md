@@ -1,10 +1,5 @@
-
-
 # Wizards of Worderly Place
 Welcome to the Worderly Place! A place that will test your wizardry in uncovering the mysterious words hidden beneath the magical word puzzle!
-
-
-
 
 
 ## User Manual
@@ -14,8 +9,8 @@ Welcome to the Worderly Place! A place that will test your wizardry in uncoverin
 2. Install the dependencies of the program.
     - `python3 -m pip install -r requirements.txt`
 3. Initialize the game
-    - Without lexicon file: `python3 main.py`
-    - With lexicon file: `python3 main.py your_lexicon_file.txt`
+    - Without lexicon file: `python3 worderly.py`
+    - With lexicon file: `python3 worderly.py your_lexicon_file.txt`
 
 ### Game Controls
 - **Guess a Word**: Type any word guess and press `Enter`
@@ -47,20 +42,16 @@ Welcome to the Worderly Place! A place that will test your wizardry in uncoverin
 - **Exit to Main Menu**: Type `E` and press `Enter` to return to the Main Menu
 
 
-
-
-
-
-
 ## Code Organization
 
 ### File Structure
-- **`main.py`**: Handles command line arguments
+- **`worderly.py`**: Handles command line arguments
 - **`game_logic.py`**: Handles puzzle grid generation and core game mechanics
 - **`main_menu_display.py`**: Handles all display menus and navigation
 - **`utilities.py`**: Contains all the helper functions
 - **`requirements.txt`**: Contains the dependencies of the program
 - **`ac-permanent-lexicon.txt`**: The permanent lexicon file of the program
+- **`test_worderly.py`**: Contains the unit tests of the program
 
 ### Key Algorithms
 1. **Puzzle Grid Generation**
@@ -110,18 +101,11 @@ Welcome to the Worderly Place! A place that will test your wizardry in uncoverin
       - If the letter at the cell is still hidden, meaning it is still represented as the character "#", then it is replaced by the corresponding letter
       - If the cell is located at the main diagonal, meaning the letter located at it belongs to the main word, then it is replaced by the corresponding letter in upper case
       - Otherwise, it is replaced by the corresponding letter in lower case
-   - Otherwise, no changes is applied to the cell
-
 
 6. **Points Computation**
    - Calculates the points gained by the player given a valid guess
       - A guess will not gain a point if and only if it is already revealed in the puzzle grid through previous guesses
       - Based on the implementation of puzzle grid generation, a valid guess not gaining a point can only happen for the main word and the words intersecting it
-
-
-
-
-
 
 
 ## Testing
@@ -149,7 +133,7 @@ The project includes pytest unit tests that verify:
 1. Install pytest if not already installed:
    `pip install pytest`
 2. Run tests:
-   `python3 -m pytest`
+   `python3 -m pytest` or `pytest`
 
 ### Test Coverage
 Tests are reasonably thorough because they:
@@ -157,6 +141,7 @@ Tests are reasonably thorough because they:
 - Include edge cases (minimum/maximum word lengths)
 - Verify proper error handling
 - Test both valid and invalid inputs
+- Uses `ac-permanent-lexicon.txt` as the lexicon file
 
 ### Adding New Tests
 1. Adding New Test Functions
@@ -166,14 +151,8 @@ Tests are reasonably thorough because they:
 2. Adding New Test Cases
    - Follow the assertion conventions
    - It is advisable to use the pre-existing main cases, to ensure proper assertions
-   - Using an arbitrary main word may not ensure proper assertions in the placement of each words
-
-
-
-
-
-
-
+   - Using an arbitrary main word may not ensure proper assertions in the placement of each word
+   - It is advisable to create test cases based from `ac-permanent-lexicon.txt`
 
 
 ## Bonus Features
@@ -214,5 +193,3 @@ Tests are reasonably thorough because they:
 
 6. **Permanent Lexicon File**
    - Allows players to run the program and play game without an input lexicon file
-
-
